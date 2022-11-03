@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mywebapps
+    labels:
+       env: prod
+       app: java
+spec:
+   replicas: 2
+   selector:
+       matchLabels:
+           env: prod
+           app: java
+   template:
+       metadata:
+           labels:
+              env: prod
+              app: java
+       spec:
+          containers:
+              - name: java
+                image: purushothamareddy/javahometech:1.0
+                ports:
+                  - containerPort: 8080
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+     name: mywebapps
+     labels:
+         env: prod
+         app: java
+spec:
+  selector:
+      app: java
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer    
