@@ -20,7 +20,7 @@ spec:
           containers:
               - name: javaApp
                 image: purushothamareddy/javahometech:1.0
-                port:
+                ports:
                   - containerPort: 8080
                   
                   
