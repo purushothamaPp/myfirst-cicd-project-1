@@ -4,21 +4,21 @@ metadata:
     name: mywebapps
     labels:
        env: prod
-       app: javaApp
+       app: java
 spec:
    replicas: 2
    selector:
        matchLabels:
            env: prod
-           app: javaApp
+           app: java
    template:
        metadata:
            labels:
               env: prod
-              app: javaApp
+              app: java
        spec:
           containers:
-              - name: javaApp
+              - name: java
                 image: purushothamareddy/javahometech:1.0
                 ports:
                   - containerPort: 8080
@@ -32,10 +32,10 @@ metadata:
      name: mywebapps
      labels:
          env: prod
-         app: javaApp
+         app: java
 spec:
   selector:
-      app: javaApp
+      app: java
   ports:
     - protocol: TCP
       port: 80
