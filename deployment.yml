@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: javaProject-1
+    name: mywebapps
     labels:
        env: prod
        app: javaApp
@@ -29,7 +29,7 @@ spec:
 apiVersion: apps:v1
 kind: Service
 metadata:
-     name: javaProject-1
+     name: mywebapps
      labels:
          env: prod
          app: javaApp
