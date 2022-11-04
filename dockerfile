@@ -1,3 +1,4 @@
 FROM tomcat:10-jre11
 
-COPY target/myweb*.war /usr/local/tomcat/webapps/myweb.war
+CMD ["java","-jar","/var/lib/jenkins/workspace/ci-cd_project-2/target/myapp-1.0-SNAPSHOT.jar"]
+
