@@ -10,11 +10,6 @@ pool:
   vmImage: centos 7.9.2009
 
 steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
